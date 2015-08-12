@@ -5,7 +5,13 @@
 # Suggestions or feedback? Reach me at chris9397@gmail.com
 
 counter=1
-workingdir=/home/$(whoami)/Wordpress
+
+if [ $1 ]
+then
+  workingdir=/home/$(whoami)/$1
+else
+  workingdir=/home/$(whoami)/Wordpress
+fi
 
 function dots {
   while [ $counter -le 3 ]
